@@ -15,26 +15,31 @@ This project explores visualizing chemical reactions and maps the energies of ch
 During the initial phase of the project, various tools were explored to determine their suitability:
 
 - **RDKit**: Emerged as the primary tool for this project due to its robust capabilities in molecular visualization and ease of mapping chemical properties to data structures.
-- **ChemTools**: Initially considered for its quantum chemistry focus, but found to be more oriented towards stoichiometry and electronic structure analysis, which are less directly applicable to the project's goals.
-- **ChemPy**: Evaluated for its chemical kinetics and thermodynamics capabilities, but ultimately deemed less relevant for the project's focus on bond visualization and auditory mapping.
+- **ChemTools and ChemPy**: Initially considered for their specialized capabilities in quantum chemistry and chemical kinetics, but found to be more oriented towards stoichiometry and electronic structure analysis, which are less directly applicable to the project's goals.
 
-## Choosing RDKit
+## Choosing RDKit and PrettyMIDI
 
-After exploring various options, RDKit was chosen as the primary tool due to:
+After exploring various options, RDKit and PrettyMIDI were chosen as the primary tools due to:
 
 - **Direct Bond Analysis**: RDKit's ability to analyze and categorize bond types directly.
 - **Integration with Pandas**: Good integration with Pandas dataframes, facilitating easy manipulation and mapping of chemical data.
 - **Visualization Strengths**: Great support for molecular structure visualization, crucial for this project's core objective.
+- **Audio Mapping with PrettyMIDI**: PrettyMIDI's flexibility in creating and manipulating MIDI files, allowing for the mapping of chemical properties to musical notes.
+
+## Project Structure
+
+- **`example/` Directory**: Contains functional scripts demonstrating the core features of the project, including RDKit visualizations and PrettyMIDI audio mappings. These serve as 'unit demos' and will be expanded into a full application in the `app/` directory.
+- **`experiment/` Directory**: Showcases initial explorations and demonstrations of various chemistry tools, including RDKit, ChemTools, and ChemPy.
 
 ## Future Directions
 
-- **Enhancing Audio Mapping**: Further refine the mapping of bond energies to musical scales to create more nuanced and varied auditory representations.
+- **Enhancing Audio Mapping**: Further refine the mapping of bond energies to musical scales using PrettyMIDI to create more nuanced and varied auditory representations.
 - **Expanding Chemical Reactions**: Broaden the range of chemical reactions visualized and sonified, exploring both organic and inorganic chemistry.
 - **Interactive Features**: Develop interactive features that allow users to manipulate molecular structures and hear corresponding changes in the music.
 
 ## Getting Started
 
-To get started with this project, you'll need to have Python installed (3.7+ reccomended), along with RDKit, Pandas, and any necessary audio processing libraries (see requirements.txt). Detailed setup instructions will be provided in subsequent sections.
+To get started with this project, you'll need to have Python installed (3.7+ recommended), along with RDKit, Pandas, PrettyMIDI, and any necessary audio processing libraries (see `requirements.txt`). Detailed setup instructions will be provided in subsequent sections.
 
 ## Contribution
 

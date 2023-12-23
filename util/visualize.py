@@ -1,11 +1,17 @@
 from rdkit import Chem
 from rdkit.Chem import Draw
+from PIL import Image
+import io
 
-from loguru import logger
+def verify_smiles(smiles):
+    return Chem.MolFromSmiles(smiles) is not None
 
-def render(mols):
-    for step, smiles_list in mols.items():
-        mol_list = [Chem.MolFromSmiles(smiles) for smiles in smiles_list]
-        img = Draw.MolsToGridImage(mol_list, molsPerRow=2, subImgSize=(200, 200))
-        img.show()
-        logger.info(f"Displayed molecules for step {step}")
+def render_smiles(smiles_list):
+    mol_list = [Chem.MolFromSmiles(smile) for smile in smiles_list if verify_smiles(smile)]
+    # Convert RDKit image to PIL Image
+    img = Draw.MolsToGridImage(mol_list, molsPerRow=2, subImgSize=(200, 200), useSVG=False)
+    img_byte_arr = io.BytesIO()
+    img.save(img_byte_arr, format='PNG')
+    img_byte_arr = img_byte_arr.getvalue()
+    pil_img = Image.open(io.BytesIO(img_byte_arr))
+    return pil_img

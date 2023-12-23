@@ -3,3 +3,5 @@ rdkit
 numpy
 loguru
 pygame
+tkinter
+PIL

@@ -4,7 +4,7 @@
 
 ## Overview
 
-Visualize chemical reactions and map the energies of chemical bonds to musical scales.
+Map the energies of chemical bonds to musical scales.
 
 ## Features
 

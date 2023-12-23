@@ -1,40 +1,38 @@
 # Chemsong
 
+![Chemsong Window](img/chemsong_window.png)
+![Chemsong Command Line Output](img/chemsong_cmd_output.png)
+
 ## Overview
 
-Chemsong is a program that combines chemical reaction visualization with audio mappings. The code translates the energies of chemical bonds into musical scales so that chemical processes can be observed along with a related audio sequence.
+Chemsong is an innovative application that visualizes chemical reactions and maps the energies of chemical bonds to musical scales, offering an engaging auditory and visual experience of chemical processes.
 
 ## Features
 
-- **Chemical Reaction Visualization**: Uses RDKit to render molecular structures and transformations during chemical reactions.
-- **Bond Energy to Audio Mapping**: Translates chemical bond energies into notes on musical scales, creating an auditory representation.
-- **Data Analysis and Visualization**: Employs Pandas for data handling and RDKit.Draw for mapping chemical properties to musical notes.
+- **Interactive Interface**: The application features a user-friendly layout with real-time input verification, visualization, and audio mapping functionalities.
+- **Chemical Reaction Visualization**: Utilizes RDKit for dynamic rendering of molecular structures based on user input.
+- **Audio Mapping of Bond Energies**: Converts chemical bond energies into musical notes for an auditory representation of the reaction process.
+- **SMILES Notation Guide**: Includes a guide for SMILES notation, assisting users in inputting accurate chemical structures.
 
-## Tools
+## Upcoming Features
 
-- **RDKit**: Chosen for its molecular visualization capabilities and ease of mapping chemical properties.
+- **Object-Oriented Approach**: Future updates will introduce object-oriented programming (OOP) to manage each reaction step, incorporating methods for playing audio, verifying SMILES notation, and rendering images efficiently.
+- **Advanced Audio Capabilities**: Enhancement of the audio system to provide more sophisticated and meaningful auditory representations of chemical reactions.
 
 ## Project Structure
 
-- `app/`: central scripts for running Chemsong
-- `util`: 'under-the-hood' Chemsong subsystems .
-- `example/`: Scripts showcasing RDKit visualizations and PrettyMIDI audio mappings. Generally speaking, these scripts don't work.
-- `experiment/`: Initial explorations with RDKit, ChemTools, and ChemPy. Some of these work I think.
-
-## Future Development
-
-- **Refine Audio Mapping**: Enhance the translation of bond energies to musical scales.
-- **Expand Reaction Range**: Include a wider variety of chemical reactions.
-- **Interactive Features**: Develop interactive elements for real-time manipulation and audio feedback.
+- `app/`: Contains the main scripts to run Chemsong.
+- `util/`: Includes essential subsystems and utilities for Chemsong.
+- `RnD/`: Research and development scripts, including preliminary tests and experiments.
 
 ## Getting Started
 
-Requirements include Python (3.7+ recommended), RDKit, Pandas, and related libraries used for audio processing. See `requirements.txt` for details.
+To start using Chemsong, ensure you have Python (version 3.7 or later) installed, along with RDKit, Pandas, and other required libraries as listed in `requirements.txt`.
 
 ## Contributing
 
-Contributions are welcome! Enhance audio mappings, visualizations, or add new features to enrich the project.
+Contributions are highly encouraged, whether it's through enhancing audio mappings, improving visualizations, or introducing new features.
 
 ## License
 
-Open-sourced under the [MIT License](LICENSE).
+This project is open-sourced under the MIT License.

@@ -3,6 +3,7 @@ from loguru import logger
 
 from util.bond_energies import bond_energies, list_bonds
 
+
 def molecules_to_bond_energy_df(mols):
 
     step_bond_energies = {}  # Dictionary to store bond energies for each step
@@ -24,7 +25,9 @@ def molecules_to_bond_energy_df(mols):
         step_bond_energies[stepnum] = bond_energies_list
 
     # Creating a DataFrame from the dictionary
-    bond_df = pd.DataFrame(list(step_bond_energies.items()), columns=['Step', 'Bond Energies'])
+    bond_df = pd.DataFrame(
+        list(step_bond_energies.items()), columns=["Step", "Bond Energies"]
+    )
     logger.success(f"\n{bond_df}")
 
     return bond_df

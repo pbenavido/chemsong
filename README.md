@@ -1,18 +1,16 @@
 # Chemsong
 
 ![Chemsong Window](img/chemsong_window.png)
-![Chemsong Command Line Output](img/chemsong_cmd_output.png)
 
 ## Overview
 
-Chemsong is an innovative application that visualizes chemical reactions and maps the energies of chemical bonds to musical scales, offering an engaging auditory and visual experience of chemical processes.
+Visualize chemical reactions and map the energies of chemical bonds to musical scales.
 
 ## Features
 
-- **Interactive Interface**: The application features a user-friendly layout with real-time input verification, visualization, and audio mapping functionalities.
-- **Chemical Reaction Visualization**: Utilizes RDKit for dynamic rendering of molecular structures based on user input.
-- **Audio Mapping of Bond Energies**: Converts chemical bond energies into musical notes for an auditory representation of the reaction process.
-- **SMILES Notation Guide**: Includes a guide for SMILES notation, assisting users in inputting accurate chemical structures.
+- **Interactive Interface**: exists.
+- **Chemical Reaction Visualization**: Utilizes RDKit for  rendering molecular structures based on user input.
+- **Audio Mapping of Bond Energies**: Converts chemical bond energies into musical notes for an auditory representation of reactions.
 
 ## Upcoming Features
 
@@ -27,7 +25,16 @@ Chemsong is an innovative application that visualizes chemical reactions and map
 
 ## Getting Started
 
-To start using Chemsong, ensure you have Python (version 3.7 or later) installed, along with RDKit, Pandas, and other required libraries as listed in `requirements.txt`.
+To start using Chemsong, ensure you have Python (version 3.7 or later) installed, along with RDKit, Pandas, and other required libraries as listed in `requirements.txt`. Try firing up a virtual env and running:
+
+`pip install -r requirements.txt`
+
+## Example cmd output:
+The bond energies are transcribed from source: Data from J. E. Huheey, E. A. Keiter, and R. L. Keiter, Inorganic Chemistry, 4th ed. (1993)
+
+Bond energy values are output using loguru in the command line, example:
+
+![Chemsong Command Line Output](img/chemsong_cmd_output.png)
 
 ## Contributing
 

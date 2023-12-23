@@ -14,8 +14,13 @@ Map the energies of chemical bonds to musical scales.
 
 ## Upcoming Features
 
+### V1.0
 - **Object-Oriented Approach**: Future updates will introduce object-oriented programming (OOP) to manage each reaction step, incorporating methods for playing audio, verifying SMILES notation, and rendering images efficiently.
-- **Advanced Audio Capabilities**: Enhancement of the audio system to provide more sophisticated and meaningful auditory representations of chemical reactions.
+- **Advanced Audio Capabilities**: Enhancement of the audio system to provide more sophisticated and meaningful auditory representations of chemical reactions.*
+
+### V2
+- **Reverse workflow** turn midi-input key notes into molecular reactions.
+- **Genetic processing** Chemsong becomes Genesong, parse ACTG and map the sequence onto notes. Likely 2 nucleotide snippets will be used for more complete octave coverage.
 
 ## Project Structure
 

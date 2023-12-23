@@ -89,7 +89,7 @@ entry_frame = ttk.Frame(root)
 entry_frame.pack(side=tk.LEFT, padx=10, pady=10, fill=tk.Y)
 
 # Descriptive message
-message_label = ttk.Label(entry_frame, text="Enter SMILES notation for each step:")
+message_label = ttk.Label(entry_frame, text="Enter SMILES notation for each step, separate moelucules with a space:")
 message_label.grid(row=0, column=0, padx=10, pady=5)
 
 

@@ -36,6 +36,11 @@ Bond energy values are output using loguru in the command line, example:
 
 ![Chemsong Command Line Output](img/chemsong_cmd_output.png)
 
+## Current known errors:
+- Program recognizes triple bonds in cyclic carbons, which is bananas.
+- Doesn't have any kind of unit testing at all, which isn't an error but seems like it's only a matter of time (standby for pytest addition)
+- third item to satisfy rule of threes
+
 ## Contributing
 
 Contributions are highly encouraged, whether it's through enhancing audio mappings, improving visualizations, or introducing new features.

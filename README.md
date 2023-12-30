@@ -16,8 +16,8 @@ Map the energies of chemical bonds to musical scales.
 
 ### V0.2
 - **Genetic processing** Chemsong becomes Genesong, parse ACTG and map the sequence onto notes. Likely 2 nucleotide snippets will be used for more complete octave coverage.
-- **Scale Selection** Ability to select what scale is played (currently Am) from a dropdown menu
-- **Random chemical reaction** Ability to generate a random chemical reaction if you don't want to have to type something out
+- **Scale selection** Ability to select what scale is played (currently Am) from a dropdown menu
+- **Random chemical reactions** Ability to generate a random chemical reaction if you don't want to have to type something out
 
 ### V1.0
 - **Object-Oriented Approach**: Future updates will introduce object-oriented programming (OOP) to manage each reaction step, incorporating methods for playing audio, verifying SMILES notation, and rendering images efficiently.
@@ -49,7 +49,8 @@ Bond energy values are output using loguru in the command line, example:
 
 ## Current known errors:
 - Program recognizes triple bonds in cyclic carbons, which is bananas.
-- Doesn't have any kind of unit testing at all, which isn't an error but seems like it's only a matter of time (standby for pytest addition)
+- Chemical images keep getting added, they should be removed before every 'process'
+- Can't see all images, need a scroll bar
 - third item to satisfy rule of threes
 
 ## Contributing

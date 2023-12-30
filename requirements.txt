@@ -3,7 +3,6 @@ rdkit
 numpy
 loguru
 pygame
-tkinter
 PIL
 pyo
 pytest

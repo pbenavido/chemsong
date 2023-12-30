@@ -6,15 +6,13 @@ from tkinter import messagebox, scrolledtext, ttk
 from PIL import Image, ImageTk
 from rdkit import Chem
 from ttkthemes import ThemedTk
+from loguru import logger
 
 from util.midi3 import df_to_notes
 from util.reaction import molecules_to_bond_energy_df
 from util.visualize import render_smiles, verify_smiles
+from util.scale_reference import scale_list
 
-import pyo
-# Initialize Pyo server
-s = pyo.Server().boot()
-s.start()
 
 def chemsong(mols):
     # get bond energies from mols
@@ -71,16 +69,19 @@ def add_step():
 # Function to add a random step with 1-3 small chemicals
 # NOTE: WIP
 # TODO: develop function
-def add_random_step():
+def generate_random_step():
 
     random_chemicals = []  # Extend list as needed
-    random_step = random.choice(random_chemicals)
-    chemletters = ["C", "N", "O", "F", "P", "S", "I"]
+    random_step = ""
+    chemletters = ["C", "N", "O", "F", "P", "S", "I", "c1cccc1", "c1ccccc1", "c1ccncc1"]
     for i in range(random.randint(1, 3)):
-        random_step += "C" + random.choice(chemletters)
+        random_step += "C" + random.choice(chemletters) + " "
+
+    logger.info(f"Random step: {random_step}")
 
     step_number = len(steps_entries) + 1
     entry = ttk.Entry(entry_frame, width=30)  # Adjust the width of the entry
+    entry.insert(0, f"{random_step}")
     entry.grid(row=step_number + 3, column=0)
     steps_entries.append(entry)
 
@@ -91,6 +92,13 @@ def reset():
     for widget in root.winfo_children():
         root.destroy()  # This will remove each widget
         os.system("python -m app.main")  # This will rerun the program
+
+
+def on_scale_select(event):
+    scale = scale_var.get()
+    with open("util/dropdown_value.txt", "w") as f:
+        f.write(scale)
+        f.close()
 
 
 # Read the SMILES guide from the text file
@@ -134,15 +142,17 @@ ttk.Button(entry_frame, text="Add Step", command=add_step).grid(
 ttk.Button(
     entry_frame, text="Process", command=lambda: process_reaction(steps_entries)
 ).grid(row=2, column=0, padx=10, pady=5)
-ttk.Button(entry_frame, text="Random Next Step", command=add_random_step).grid(
-    row=3, column=0, padx=10, pady=5
-)
+
+random_button_text = "Generate Random Step"
+ttk.Button(
+    entry_frame, text=f"{random_button_text}", command=generate_random_step
+).grid(row=3, column=0, padx=10, pady=5)
 
 # Frame for SMILES guide
 guide_frame = ttk.Frame(root)
 guide_frame.pack(side=tk.RIGHT, padx=10, pady=10, fill=tk.Y)
 guide_text = scrolledtext.ScrolledText(
-    guide_frame, wrap=tk.WORD, width=40, height=15
+    guide_frame, wrap=tk.WORD, width=40, height=20
 )  # Adjust size
 guide_text.insert(tk.INSERT, smiles_guide)
 guide_text.config(state="disabled")
@@ -158,34 +168,16 @@ reset_button.pack(pady=10)
 
 # Frame for RDKit images
 image_frame = ttk.Frame(root)
-image_frame.pack(
-    side=tk.BOTTOM, fill=tk.BOTH, expand=True, padx=10, pady=10
-)  # Move to the bottom
-
-
-### Scale dropdown menu code!
-
-# Assuming scale_reference.py is in the 'util' directory and has a list named FREAKwencies
-# Descriptive message
-message_label = ttk.Label(root, text="Select musical scale:")
-message_label.pack(pady=5)  # Adjust placement as needed
-
-from util.scale_reference import scale_list
-
-
-# Function to handle scale selection
-# WIP
-def on_scale_select(event):
-    scale = scale_var.get()
-    with open('util/dropdown_value.txt', 'w') as f:
-        f.write(scale)
-        f.close()
+image_frame.pack(side=tk.BOTTOM, fill=tk.BOTH, expand=True, padx=10, pady=10)
 
 
 # Creating the scale dropdown menu
+ttk.Label(top_frame, text="Select musical scale:").pack(
+    pady=5
+)  # Adjust placement as needed
 scale_var = tk.StringVar()
-scale_menu = ttk.Combobox(root, textvariable=scale_var, values=scale_list)
+scale_menu = ttk.Combobox(top_frame, textvariable=scale_var, values=scale_list)
 scale_menu.bind("<<ComboboxSelected>>", on_scale_select)
-scale_menu.pack(pady=5)  # Adjust placement as needed
+scale_menu.pack(pady=200)  # Adjust placement as needed
 
 root.mainloop()

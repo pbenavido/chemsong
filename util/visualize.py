@@ -15,7 +15,7 @@ def render_smiles(smiles_list):
     ]
     # Convert RDKit image to PIL Image
     img = Draw.MolsToGridImage(
-        mol_list, molsPerRow=2, subImgSize=(200, 200), useSVG=False
+        mol_list, molsPerRow=4, subImgSize=(300, 100), useSVG=False
     )
     img_byte_arr = io.BytesIO()
     img.save(img_byte_arr, format="PNG")

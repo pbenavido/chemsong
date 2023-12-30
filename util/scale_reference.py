@@ -34,7 +34,9 @@ FREAKwencies = [
 
 # Function to convert frequency to MIDI note number
 def frequency_to_midi(frequency):
-    return int(round(69 + 12 * math.log2(frequency / 440.0)))
+    freq = int(round(69 + 12 * math.log2(frequency / 440.0)))
+    boosted_freq = freq + 30  # boosting to make audible
+    return boosted_freq
 
 
 # Function to convert MIDI note number to frequency

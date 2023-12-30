@@ -1,6 +1,5 @@
 import pandas as pd
-from experiment.midi_draft_2 import (map_to_a_minor_scale,
-                                     play_notes_from_dataframe)
+from experiment.midi_draft_2 import map_to_a_minor_scale, play_notes_from_dataframe
 
 from util.bond_energies import bond_energies
 

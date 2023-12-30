@@ -1,4 +1,4 @@
-# Chemsong V0.1
+# Chemsong V0.2
 
 ![Chemsong Window](img/chemsong_window.png)
 

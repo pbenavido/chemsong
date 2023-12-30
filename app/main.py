@@ -178,6 +178,7 @@ ttk.Label(top_frame, text="Select musical scale:").pack(
 scale_var = tk.StringVar()
 scale_menu = ttk.Combobox(top_frame, textvariable=scale_var, values=scale_list)
 scale_menu.bind("<<ComboboxSelected>>", on_scale_select)
-scale_menu.pack(pady=200)  # Adjust placement as needed
+scale_menu.current("0")
+scale_menu.pack(pady=5)  # Adjust placement as needed
 
 root.mainloop()

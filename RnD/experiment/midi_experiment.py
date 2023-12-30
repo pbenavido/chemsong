@@ -1,15 +1,10 @@
 import pandas as pd
-
-from util.bond_energies import bond_energies
 from experiment.midi_draft_2 import map_to_a_minor_scale, play_notes_from_dataframe
 
+from util.bond_energies import bond_energies
+
 # Example DataFrame
-data = {
-    0: [1,2,3],
-    1: [[835],
-        [346,835],
-        [835,346]]
-}
+data = {0: [1, 2, 3], 1: [[835], [346, 835], [835, 346]]}
 df = pd.DataFrame(data)
 
 ordered_energy_list = list(bond_energies.values())
@@ -23,5 +18,5 @@ for i in range(len(df)):
 # Play the notes
 play_notes_from_dataframe(df)
 
-# Note: This script won't produce sound in this environment. 
+# Note: This script won't produce sound in this environment.
 # You need to run it in your local environment with MIDI setup.

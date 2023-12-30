@@ -1,5 +1,6 @@
 from util.reaction import molecules_to_bond_energy_df
 
+
 def test_molecules_to_df():
     mols = {}
     mols[1] = ["CF", "CO"]

@@ -8,8 +8,7 @@ frontier molecular orbital (FMO) approach, and generate visualization scripts.
 
 """
 
-from chemtools import (LocalConceptualDFT, UniformGrid,
-                       print_vmd_script_isosurface)
+from chemtools import LocalConceptualDFT, UniformGrid, print_vmd_script_isosurface
 
 file_path = "ch2o_q+0.fchk"
 

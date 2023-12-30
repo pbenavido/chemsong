@@ -1,11 +1,22 @@
-import pandas as pd
-import mido
 import time
+
+import mido
+import pandas as pd
+
 
 def map_to_a_minor_scale(note):
     # Mapping the number to a note in A minor scale
-    a_minor_scale = [69, 71, 72, 74, 76, 77, 79] # MIDI notes for A minor scale (A4 to G5)
+    a_minor_scale = [
+        69,
+        71,
+        72,
+        74,
+        76,
+        77,
+        79,
+    ]  # MIDI notes for A minor scale (A4 to G5)
     return a_minor_scale[note % len(a_minor_scale)]
+
 
 def df_to_notes(df):
     # Setting up a MIDI port (this should be routed to a software synthesizer or DAW)
@@ -16,15 +27,15 @@ def df_to_notes(df):
 
             # Sending MIDI messages for each note
             for note in midi_notes:
-                msg = mido.Message('note_on', note=note)
+                msg = mido.Message("note_on", note=note)
                 port.send(msg)
-            
+
             # Delay to let the notes play
             time.sleep(0.5)
 
             # Sending note_off messages to stop the notes
             for note in midi_notes:
-                msg = mido.Message('note_off', note=note)
+                msg = mido.Message("note_off", note=note)
                 port.send(msg)
 
             # Delay between rows

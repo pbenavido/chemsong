@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 from rdkit import Chem
 from ttkthemes import ThemedTk
 
-from util.midi import df_to_notes
+from util.midi3 import df_to_notes
 from util.reaction import molecules_to_bond_energy_df
 from util.visualize import render_smiles, verify_smiles
 

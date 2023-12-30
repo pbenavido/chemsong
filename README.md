@@ -1,4 +1,4 @@
-# Chemsong
+# Chemsong V0.1
 
 ![Chemsong Window](img/chemsong_window.png)
 
@@ -14,18 +14,24 @@ Map the energies of chemical bonds to musical scales.
 
 ## Upcoming Features
 
+### V0.2
+- **Genetic processing** Chemsong becomes Genesong, parse ACTG and map the sequence onto notes. Likely 2 nucleotide snippets will be used for more complete octave coverage.
+- **Scale Selection** Ability to select what scale is played (currently Am) from a dropdown menu
+- **Random chemical reaction** Ability to generate a random chemical reaction if you don't want to have to type something out
+
 ### V1.0
 - **Object-Oriented Approach**: Future updates will introduce object-oriented programming (OOP) to manage each reaction step, incorporating methods for playing audio, verifying SMILES notation, and rendering images efficiently.
 - **Advanced Audio Capabilities**: Enhancement of the audio system to provide more sophisticated and meaningful auditory representations of chemical reactions.*
 
-### V2
+### V2.0
 - **Reverse workflow** turn midi-input key notes into molecular reactions.
-- **Genetic processing** Chemsong becomes Genesong, parse ACTG and map the sequence onto notes. Likely 2 nucleotide snippets will be used for more complete octave coverage.
+
 
 ## Project Structure
 
 - `app/`: Contains the main scripts to run Chemsong.
 - `util/`: Includes essential subsystems and utilities for Chemsong.
+= `test/`: Unit testing for some basic dataframe parsing
 - `RnD/`: Research and development scripts, including preliminary tests and experiments.
 
 ## Getting Started
@@ -49,6 +55,10 @@ Bond energy values are output using loguru in the command line, example:
 ## Contributing
 
 Contributions are highly encouraged, whether it's through enhancing audio mappings, improving visualizations, or introducing new features.
+
+### Thanks to the following contributors for helping in early dev:
+- Matt Fries: [moonpapasart.com](moonpapasart.com)
+
 
 ## License
 

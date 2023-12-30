@@ -13,6 +13,4 @@ mols[3] = ["CCc1ccccc1"]
 
 df = molecules_to_bond_energy_df(mols)
 
-breakpoint()
-
 assert df

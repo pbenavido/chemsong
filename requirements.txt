@@ -5,3 +5,5 @@ loguru
 pygame
 tkinter
 PIL
+pyo
+pytest

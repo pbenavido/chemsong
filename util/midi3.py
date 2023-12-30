@@ -13,7 +13,8 @@ s.start()
 # Data Processing Function
 def normalize_data(bond_df: pd.DataFrame) -> pd.DataFrame:
 
-    sorted_bond_energies = sorted(bond_energies.values())
+    sorted_bond_energies = sorted(set(bond_energies.values()))
+    
 
     # normalize energies for midi mapping
     bond_df["Energy Index"] = bond_df["Bond Energies"].apply( # TODO: change to "make sure key ["energies"] matches the key in the dataframe"

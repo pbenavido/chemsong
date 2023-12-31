@@ -52,6 +52,12 @@ To run the existing (unit) tests, make sure pytest is installed then run:
 
 `python -m pytest test`
 
+To run the program from the project root directory, run:
+
+`python -m app.main`
+
+Please keep in mind that as the project evolves there may be changing dependencies that are not reflected in the README.md (yeehaw)
+
 ## Current known errors:
 - Program recognizes triple bonds in cyclic carbons, which is bananas.
 - Chemical images keep getting added, they should be removed before every 'process'
